@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       
+        body,html{
+            height:100%;
+            transition: all 0.1s ease-in-out 0s;
+            height: 720px;
+            width: 97%;
+         background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%); 
+         border: 1rem solid rgb(11, 9, 36);       }
+     .bg{
+
+        background-image: url("handclock1.png");
+            box-sizing:border-box;
+            box-decoration-break: slice;
+            background-position-y: 190px;
+            background-position-x: center;
+            position: absolute;
+            background-repeat: no-repeat;
+            font-size: 20px;            color:rgb(236, 231, 231);
+              transition: all 0.1s ease-in-out 0s;
+        }
+     .text{
+         padding: 270px 620px;
+        }
+        </style>
+    <title>clock</title>
+</head>
+<script>
+    let a;
+    let date;
+    let time;
+    const options ={weekday:'long',year:'numeric',month:'long',day:'numeric'};
+    clr=setInterval(()=>{
+        a=new Date();
+        date=a.toLocaleDateString(undefined ,options);
+        time=a.getHours()+ ':' +a.getMinutes()+ ':' +a.getSeconds();
+        document.getElementById('time').innerHTML=time;
+        document.getElementById('date').innerHTML= date;
+    },1000);
+</script>
+<body  class="bg">
+    <div class="text">
+    <h3 id="time">Time</h3>
+    <h4 id="date">Day</h4>
+    </div>
+    
+</body>
+</html>
